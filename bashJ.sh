@@ -41,8 +41,7 @@ function _J_usage {
 function _J_list {
     arr=(`ls $MARKPATH`)
     for link in ${arr[@]}; do
-        printf "${GREEN}%-20s${WHITE}" "$link"
-        printf "%s\n" `readlink "$MARKPATH/$link" |sed "s#^$HOME#~#"`
+        printf "${GREEN}%-20s${WHITE} %s\n" "$link" "`readlink "$MARKPATH/$link" |sed "s#^$HOME#~#"`"
 	  done
 }
 
